@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+admin_cv_cvsigma,cv,model_cv_model,cvsigma.group_cvsigma_admin,1,0,0,0
+admin_education_cvsigma,education,model_education_model,cvsigma.group_cvsigma_admin,1,0,0,0
+admin_qualification_cvsigma,qualification,model_qualification_model,cvsigma.group_cvsigma_admin,1,0,0,0
+admin_experience_cvsigma,experience,model_experience_model,cvsigma.group_cvsigma_admin,1,0,0,0
+admin_unit_cvsigma,unit,model_unit_model,cvsigma.group_cvsigma_admin,1,0,0,0
+admin_language_cvsigma,language,model_language_model,cvsigma.group_cvsigma_admin,1,0,0,0
+user_cv_cvsigma,cv.cvsigma,model_cv_model,cvsigma.group_cvsigma_user,1,1,1,1
+user_education_cvsigma,education.cvsigma,model_education_model,cvsigma.group_cvsigma_user,1,1,1,1
+user_qualification_cvsigma,qualification.cvsigma,model_qualification_model,cvsigma.group_cvsigma_user,1,1,1,1
+user_experience_cvsigma,experience.cvsigma,model_experience_model,cvsigma.group_cvsigma_user,1,1,1,1
+user_unit_cvsigma,unit.cvsigma,model_unit_model,cvsigma.group_cvsigma_user,1,1,1,1
+user_language_cvsigma,language.cvsigma,model_language_model,cvsigma.group_cvsigma_user,1,1,1,1

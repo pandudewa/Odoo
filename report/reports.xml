@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <record id="account_invoices" model="ir.actions.report">
+            <field name="name">Download PDF</field>
+            <field name="model">cv.model</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">cvsigma.report_cv</field>
+            <field name="report_file">cvsigma.report_cv</field>
+            <field name="attachment_use" eval="True"/>
+            <field name="binding_model_id" ref="model_cv_model"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>
+
+
+<!--<t t-foreach="docs" t-as="property">&ndash;&gt;&ndash;&gt;-->
+<!--        </t>-->
+
+<!--<field name="attachment">(object.state in ('open','paid')) and&ndash;&gt;-->
+<!--                ('INV'+(object.number or '').replace('/','')+'.pdf')</field>-->

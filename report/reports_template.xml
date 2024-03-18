@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_cv">
+        <t t-call="web.html_container">
+            <t t-call="web.basic_layout">
+                 <div style="margin-bottom: 25px; margin-top: 25px;">
+                    <div class="row">
+                        <div class="col-6 mb4">
+                            <img class="image" src="/cvsigma/static/src/img/logo_telkom_1.png" style="max-height:80px"></img>
+                        </div>
+                        <div class="col-6 text-end">
+                            <img class="image" src="/cvsigma/static/src/img/logo_telkomsigma_2.jpg" style="max-height:100px;"></img>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h1 style="text-align:center">Curriculum Vitae</h1>
+                        </div>
+                    </div>
+                </div>
+
+                    <div class="col-xs-12" style="background-color:#b6252a; display: flex; align-items: center; justify-content: center; height: 60vh; width: full; padding: 10px 10px 10px 10px; padding-bottom: 10px; overflow: hidden; margin-right: -10px; margin-left: -10px">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div>
+                                    <div style="text-align : center ; margin-bottom : 10px">
+                                        <img t-attf-src="data:image/png;base64,{{docs.photo}}"  style="text-align : center; width:25% "/>
+                                    </div>
+                                    <div>
+                                        <h2 style="text-align: center; color : white;"><span t-field="docs.name"/></h2>
+                                        <h3 style="text-align: center; color : white;">Telkomsigma, Jogja Solution Centre</h3>
+                                        <h3 style="text-align: center; color : white;">IndigoHub Jl. Sagan No.7, Yogyakarta, Indonesia</h3>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <div>
+                    <!-- Personal Information -->
+                    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                        <div class="col-xs-10">
+                            <h4 style="margin-bottom: 10px; color: #ed1e28;">Personal Information</h4>
+                            <table class="table" style="width:100%;">
+                                <tr>
+                                    <td><strong>Email:</strong></td>
+                                    <td><span t-field="docs.email"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Phone:</strong></td>
+                                    <td><span t-field="docs.phone"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Address:</strong></td>
+                                    <td><span t-field="docs.address"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>LinkedIn:</strong></td>
+                                    <td><a t-attf-href="{{docs.linkedin_link}}"><span t-field="docs.linkedin_link"/></a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Instagram:</strong></td>
+                                    <td><a t-attf-href="{{docs.instagram_link}}"><span t-field="docs.instagram_link"/></a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Business Unit:</strong></td>
+                                    <td><span t-field="docs.business_unit.name"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Position:</strong></td>
+                                    <td><span t-field="docs.position"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Self Description:</strong></td>
+                                    <td><span t-field="docs.self_description"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Aspiration:</strong></td>
+                                    <td><span t-field="docs.aspiration"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience -->
+                    <div class="row" style="margin-bottom: 20px; margin-top: 60px;">
+                        <h4 style="margin-bottom: 10px; color: #ed1e28;">Work Experience</h4>
+                    </div>
+                    <div t-foreach="docs.experience" t-as="exp">
+                        <div style="margin-bottom: 20px;">
+                            <div style="background-color:#b6252a; display: flex; align-items: center; text-align: center; flex-direction: column;">
+                                <h4 style="color: white; margin-left: 15px; margin-right: 15px;"><span t-field="exp.company_name"/></h4>
+                                <h4 style="color: white; margin-left: 15px; margin-right: 15px;"><span t-esc="exp.start_date.strftime('%d %B %Y')"/> - <span t-esc="exp.end_date.strftime('%d %B %Y')"/></h4>
+                            </div>
+                            <table class="table" style="width:100%;">
+                                <tr>
+                                    <td><strong>Position Title (Level):</strong></td>
+                                    <td><span t-field="exp.job_title"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Specialization:</strong></td>
+                                    <td><span t-field="exp.specialization"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Role:</strong></td>
+                                    <td><span t-field="exp.role"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Additional Skills:</strong></td>
+                                    <td><span t-field="exp.skills"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Special Achievement:</strong></td>
+                                    <td><span t-field="exp.achievement"/></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Work Description:</strong></td>
+                                    <td><span t-field="exp.description"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Education History -->
+                    <div class="row" style="margin-top: 125px; margin-bottom: 20px;">
+                        <div class="col-xs-12">
+                            <h4 style="margin-bottom: 10px; color: #ed1e28;">Education History</h4>
+                            <table class="table" style="width:100%;" t-foreach="docs.education" t-as="edu">
+                                <tr>
+                                    <td style="padding-right: 10px; width:25%;"><span t-field="edu.year"/></td>
+                                    <td style="padding-right: 10px; width:75%;"><span t-field="edu.school"/> (<span t-field="edu.degree"/>)</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Qualification -->
+                    <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
+                        <div class="col-xs-12">
+                            <h3 style="margin-bottom: 10px; color: #ed1e28;">Professional Qualification</h3>
+                            <table class="table" style="width:100%;" t-foreach="docs.qualification" t-as="qua">
+                                <tr>
+                                    <td><span t-field="qua.description"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Language -->
+                    <div class="row" style="margin-bottom: 20px; margin-top: 20px;">
+                        <div class="col-xs-12">
+                            <h3 style="margin-bottom: 10px; color: #ed1e28;">Language mastered</h3>
+                            <table class="table" style="width:100%;" t-foreach="docs.language" t-as="lan">
+                                <tr>
+                                    <td style="width:33.33%;"><span t-field="lan.language"/></td>
+                                    <td style="width:33.33%;">Spoken : <span t-field="lan.spoken"/></td>
+                                    <td style="width:33.33%;">Written : <span t-field="lan.written"/></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px; margin-top: 30px;">
+                        <div style="font-weight: bold;">
+                            <p style="margin: 0;">Saya yang bertanda tangan dibawah ini, menyatakan bahwa isi surat ini adalah benar adanya. Terima kasih atas perhatian dan kerjasamanya.</p>
+                        </div>
+                        <div style="margin-top: 10px; font-weight: bold;">
+                            <p style="margin: 0;">Hormat saya,</p>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <div style="float: left; margin-top: 20px;">
+                            <div style="height: 50px; border-bottom: 1px solid #000; width: 250px;"></div>
+                            <div style="font-weight: bold;"><span t-field="docs.name"/></div>
+                            <div style="font-style: italic;"><span t-field="docs.position"/></div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
